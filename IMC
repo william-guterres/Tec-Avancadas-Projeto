@@ -1,0 +1,73 @@
+public class Paciente {
+	
+	private String n, e;
+	private int i;
+	private float p, a;
+	
+	public Paciente(String n, String e, int i, float p, float a) {
+		super();
+		this.n = n;
+		this.e = e;
+		this.i = i;
+		this.p = p;
+		this.a = a;
+	}
+	public String getN() {
+		return n;
+	}
+	public void setN(String n) {
+		this.n = n;
+	}
+	public String getE() {
+		return e;
+	}
+	public void setE(String e) {
+		this.e = e;
+	}
+	public int getI() {
+		return i;
+	}
+	public void setI(int i) {
+		this.i = i;
+	}
+	public float getP() {
+		return p;
+	}
+	public void setP(float p) {
+		this.p = p;
+	}
+	public float getA() {
+		return a;
+	}
+	public void setA(float a) {
+		this.a = a;
+	}
+	
+	public void imc() {
+		double imc = p/(Math.pow(a,2));
+		System.out.print("\nSeu IMC é: " + imc);
+System.out.print("\nNome: " + n + "\nIdade: " + i +" anos" + "\nEndereço: " + e + "\nPeso: " + p + "\nAltura: " + a);
+	}
+}
+public class Aplicacao {
+	
+	public static void main(String[] args) throws IOException {
+	
+	BufferedReader l = new BufferedReader(new InputStreamReader(System.in));
+	System.out.print("Digite o nome: ");
+	String n = l.readLine();	
+	System.out.print("Digite o endereço: " );
+	String e = l.readLine();
+	System.out.print("Digite a idade: " );
+	int i = Integer.parseInt(l.readLine());	
+	System.out.print("Digite o peso: ");
+	float p = Float.parseFloat(l.readLine());
+	System.out.print("Digite a altura: ");
+	float a = Float.parseFloat(l.readLine());
+		
+		
+	Paciente p1 = new Paciente(n, e, i, p, a);	
+	p1.mostraDados();
+	p1.imc();
+	}
+}
