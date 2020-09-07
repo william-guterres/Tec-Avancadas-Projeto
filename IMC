@@ -44,12 +44,14 @@ public class Paciente {
 	}
 	
 	//Cálculo da taxa de IMC onde o peso é divido pela altura ao quadrado. Altura em metros
+	
 	public void taxaIMC() {
 		double taxaIMC = peso/(Math.pow(altura,2));
 		System.out.print("\nSeu Indice de Massa Corporal é: " + taxaIMC);
 	}
 	
 	//Chamada do método que mostra os dados da pessoa.
+	
 	public void mostraDados() {
 		System.out.print("\nNome: " + nome + "\nIdade: " + idade +" anos" + "\nEndereço: " + endereco + "\nPeso: " + peso + "\nAltura: " + altura);
 		
@@ -57,31 +59,49 @@ public class Paciente {
 }
 
 public class AplicacaoPaciente {
+
 	//Inicio da leitura dos dados
+	
 	public static void main(String[] args) throws IOException {
+	
 	//Abertura de leitura do teclado
+	
 	BufferedReader leitura = new BufferedReader(new InputStreamReader(System.in));
+	
 	//Leitura do nome digitado no teclado. Dado é guardado na variável nome.
+	
 	System.out.print("Digite o nome: ");
 	String nome = leitura.readLine();
-	//Leitura do endereço digitado no teclado. Dado é guardado na variável endereço.	
+	
+	//Leitura do endereço digitado no teclado. Dado é guardado na variável endereço.
+	
 	System.out.print("Digite o endereço: " );
 	String endereco = leitura.readLine();
+	
 	////Leitura da idade digitado no teclado. Dado é guardado na variável idade.
+	
 	System.out.print("Digite a idade: " );
 	int idade = Integer.parseInt(leitura.readLine());
-	//Leitura do peso digitado no teclado. Dado é guardado na variável Peso.	
+	
+	//Leitura do peso digitado no teclado. Dado é guardado na variável Peso.
+	
 	System.out.print("Digite o peso: ");
 	float peso = Float.parseFloat(leitura.readLine());
+	
 	//Leitura do altura digitado no teclado. Dado é guardado na variável altura.
+	
 	System.out.print("Digite a altura: ");
 	float altura = Float.parseFloat(leitura.readLine());
 		
-	//Cria o objeto Paciente para inserção dos dados.	
+	//Cria o objeto Paciente para inserção dos dados.
+	
 	Paciente paciente1 = new Paciente(nome, endereco, idade, peso, altura);
+	
 	//Iniciação do método para mostrar os dados na tela.	
 	paciente1.mostraDados();
+	
 	//Chamada do método para realização do cálculo da taxa de indice de massa corporal
+	
 	paciente1.imc();
 	}
 }
